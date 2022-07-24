@@ -1,16 +1,10 @@
-let dog = {
-    sound: 'woof',
-    talk: function() {
-        console.log(this.sound);
-    }
+function talk() {
+    console.log(this.sound);
 }
 
-let cat = {
-    sound: 'Meoww'
+let me = {
+    sound: 'Hello....'
 }
-
-dog.talk();
-
-let talkFunction = dog.talk;
-let boundFunction = talkFunction.bind(cat);
-boundFunction();
+talk(); // undefined - sound is a global variable
+let talkBoungToMe = talk.bind(me);
+talkBoungToMe();
